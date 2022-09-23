@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-
+//test
 app.use(express.json());
 
 const __dirname = path.resolve();
