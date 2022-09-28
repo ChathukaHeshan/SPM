@@ -5,6 +5,10 @@ import connectDB from './config/db.js';
 
 
 
+import userRoutes from './routes/userRoutes.js';
+
+
+
 import path from 'path';
 
 dotenv.config();
@@ -14,6 +18,8 @@ connectDB();
 const app = express();
 //test
 app.use(express.json());
+
+app.use('/api/users', userRoutes);
 
 const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
