@@ -2,13 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
-
-
-
 import userRoutes from './routes/userRoutes.js';
-
-
-
 import path from 'path';
 
 dotenv.config();
@@ -35,9 +29,6 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running...');
   });
 }
-
-app.use(notFound);
-app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
