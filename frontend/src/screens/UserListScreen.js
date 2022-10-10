@@ -118,16 +118,7 @@ import {
                 <TableBody>
                   {users.map((user) => (
                     <StyledTableRow key={user._id}>
-                      {/* <TableCell align="center" component="th" scope="row">
-                        <CopyToClipboard
-                          onCopy={() => dispatch(addSnackBarMsg(`Copied ${user._id} successfully!`))}
-                          text={user._id}
-                        >
-                          <Tooltip title="Copy id" aria-label="not_paid">
-                            <span className={classes.idCopy}>{user._id}</span>
-                          </Tooltip>
-                        </CopyToClipboard>
-                      </TableCell> */}
+                      
   
                       <TableCell align="center">{user.name}</TableCell>
                       <TableCell align="center">{user.email}</TableCell>
@@ -138,19 +129,7 @@ import {
                           <CloseIcon className={classes.noIcon} />
                         )}
                       </TableCell>
-                      {/* <TableCell align="center" padding="default">
-                        <div style={{ display: 'flex' }}>
-                          <EditUserDialog userId={user._id} />
-                          <IconButton
-                            edge="end"
-                            aria-label="delete"
-                            onClick={() => handleDelete(user._id)}
-                            className={classes.noIcon}
-                          >
-                            <DeleteIcon />
-                          </IconButton>
-                        </div>
-                      </TableCell> */}
+                      
                     </StyledTableRow>
                   ))}
                 </TableBody>
