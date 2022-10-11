@@ -38,6 +38,35 @@ export const listProducts = (keyword = '', pageNumber = '') => async (dispatch) 
     }
   };
 
+  export const deleteProduct = (id) => async (dispatch, getState) => {
+    try {
+      dispatch({ type: PRODUCT_DELETE_REQUEST });
+  
+      const {
+        userLogin: { userInfo },
+      } = getState();
+  
+      const config = {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+  
+      await axios.delete(`/api/products/${id}`, config);
+  
+      dispatch({
+        type: PRODUCT_DELETE_SUCCESS,
+      });
+      dispatch({ type: ADD_SNACKBAR, payload: 'Product deleted successfully!' });
+    } catch (error) {
+      dispatch({
+        type: PRODUCT_DELETE_FAIL,
+        payload:
+          error.response && error.response.data.message ? error.response.data.message : error.message,
+      });
+    }
+  };
+
   export const createProduct = () => async (dispatch, getState) => {
     try {
       dispatch({ type: PRODUCT_CREATE_REQUEST });
