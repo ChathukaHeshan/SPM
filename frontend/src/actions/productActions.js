@@ -16,6 +16,8 @@ import {
     PRODUCT_UPDATE_REQUEST,
     PRODUCT_UPDATE_SUCCESS,
   } from '../constants/productConstants';
+  import { ADD_SNACKBAR } from '../constants/snackbarConstants';
+
 
 export const listProducts = (keyword = '', pageNumber = '') => async (dispatch) => {
     try {
