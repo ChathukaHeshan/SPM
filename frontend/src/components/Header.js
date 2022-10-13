@@ -84,7 +84,8 @@ const Header = () => {
                 </Badge>
               }
             >
-              
+             { Cart }
+
             </Button>
 
             {userInfo ? (
