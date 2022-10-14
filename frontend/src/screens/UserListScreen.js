@@ -51,7 +51,7 @@ import {
   const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.primary.main,
-      
+      color: theme.palette.common.white,
       backgroundColor:'#8FBC8B',
     },
     body: {
