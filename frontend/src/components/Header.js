@@ -60,13 +60,7 @@ const Header = () => {
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
           <Typography variant="h6" className={classes.title}>
-            <NavLink
-              style={{ textDecoration: 'none', color: 'white', paddingRight: '15px' }}
-              exact
-              to="/"
-            >
-              WERECLAIM
-            </NavLink>
+            
             {/* <Route render={({ history }) => <SearchBox history={history} />} /> */}
           </Typography>
           <div style={{ display: 'flex' }}>
