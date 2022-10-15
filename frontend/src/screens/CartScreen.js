@@ -15,7 +15,6 @@ import {
     Typography,
   } from '@material-ui/core';
   import DeleteIcon from '@material-ui/icons/Delete';
-  import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
   import { debounce } from 'lodash';
   import React, { useEffect, useMemo } from 'react';
   import NumberFormat from 'react-number-format';
@@ -88,7 +87,7 @@ import {
           <Grid item xs={12} md={7}>
             <Box>
               <Typography variant="h5" style={{ marginTop: '25px',color:'#4682B4'  }}>
-                {/* <ShoppingCartIcon style={{ position: 'relative', top: '4px',color:'#4682B4' }} /> */} <b>SHOPPING CART</b>
+                 <b>SHOPPING CART</b>
               </Typography>
             </Box>
           </Grid>
@@ -108,7 +107,7 @@ import {
                     color="textSecondary"
                     className={classes.itemNameText}
                   >
-                    Subtotal: ({cartItems.reduce((acc, item) => acc + item.qty, 0)} items)
+                    Total: ({cartItems.reduce((acc, item) => acc + item.qty, 0)} items)
                   </Typography>
                 </Grid>
                 <Grid item xs={2} md={5}>
