@@ -16,7 +16,7 @@ export const FormikPasswordInputField = ({ label, ...props }) => {
       onBlur={field.onBlur}
       helperText={meta.touched && meta.error ? meta.error : null}
       error={!!meta.error && meta.touched}
-      {...props}
+    
     />
   );
 };
