@@ -132,4 +132,93 @@ import {
       doc.autoTable(content);
       doc.save("report.pdf")
     }
-  }
+    return (
+      <Container maxWidth="md">
+        <Grid item xs={12}>
+          <Typography variant="h5" style={{ marginTop: '25px', textAlign: 'center',color:'#4682B4' }} >
+           <b> PRODUCTS</b>
+          </Typography>
+          <Button
+            variant="outlined"
+            className={classes.addProduct}
+            // startIcon={<AddCircleIcon />}
+            onClick={createProductHandler}
+          >
+            Create product
+          </Button>
+          {loadingDelete && <Loader open={loadingDelete} />}
+          {errorDelete && <Message severity="error">{errorDelete}</Message>}
+          {loadingCreate && <Loader open={loadingCreate} />}
+          {errorCreate && <Message severity="error">{errorCreate}</Message>}
+          {loading && <Loader open={loading} />}
+          {error && <Message severity="error">{error}</Message>}
+          {products && products.length > 0 && (
+            <TableContainer component={Paper} style={{ marginTop: '15px' }}>
+              <Table className={classes.table} size="small" aria-label="my products table">
+                <TableHead>
+                  <TableRow>
+                    {/* <StyledTableCell align="center">ID</StyledTableCell> */}
+                    <StyledTableCell align="center">NAME</StyledTableCell>
+                    <StyledTableCell align="center">PRICE</StyledTableCell>
+                    <StyledTableCell align="center">CATEGORY</StyledTableCell>
+                    <StyledTableCell align="center">BRAND</StyledTableCell>
+                    <StyledTableCell align="center"></StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {products.map((product) => (
+                    <StyledTableRow key={product._id}>
+                      {/* <TableCell align="center" component="th" scope="row">
+                        <CopyToClipboard
+                          onCopy={() =>
+                            dispatch(addSnackBarMsg(`Copied ${product._id} successfully!`))
+                          }
+                          text={product._id}
+                        >
+                          <Tooltip title="Copy id" aria-label="not_paid">
+                            <span className={classes.idCopy}>{product._id}</span>
+                          </Tooltip>
+                        </CopyToClipboard>
+                      </TableCell> */}
+  
+                      <TableCell align="center">{product.name}</TableCell>
+                      <TableCell align="center">{product.price}Rs</TableCell>
+                      <TableCell align="center">{product.category}</TableCell>
+                      <TableCell align="center">{product.brand}</TableCell>
+                      <TableCell align="center" padding="default">
+                        <div style={{ display: 'flex' }}>
+                          <EditProductDialog productId={product._id} page={pageNumber} />
+                          <IconButton
+                            edge="end"
+                            aria-label="delete"
+                            onClick={() => handleDelete(product._id)}
+                            className={classes.noIcon}
+                          >
+                            <DeleteIcon />
+                          </IconButton>
+                        </div>
+                      </TableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+                <TableFooter>
+                  <TableRow className={classes.footer}>
+                    <Paginate pages={pages} page={page} isAdmin={true} />
+                  </TableRow>
+                </TableFooter>
+              </Table>
+            </TableContainer>
+          )}
+        </Grid>
+        <Button onClick={()=>exportPDF()} variant="outlined"
+        size="small"
+        style={{color:'#8FBC8B',marginTop:'25px'}}
+      >
+        Generate Report
+      </Button>
+       </Container>
+        
+    );
+  };
+  
+  export default ProductListScreen;
