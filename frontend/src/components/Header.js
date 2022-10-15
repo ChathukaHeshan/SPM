@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.main,
     padding: theme.spacing(1),
     flexWrap: 'wrap',
-    backgroundColor :'#008080',
+    
   },
   title: {
     display: 'flex',
