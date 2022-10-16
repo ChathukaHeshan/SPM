@@ -55,7 +55,6 @@ const ShippingScreen = ({ history }) => {
 
   return (
     <div>
-      {/* <CheckoutSteps step={0} /> */}
       <FormContainer>
         <form className={classes.root} autoComplete="off">
           <Box>
