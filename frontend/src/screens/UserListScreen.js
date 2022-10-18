@@ -98,7 +98,7 @@ import {
     return (
       <Container maxWidth="md">
         <Grid item xs={12}>
-          <Typography variant="h5" style={{ marginTop: '25px', textAlign: 'center' ,color:'#4682B4'}}>
+        <Typography variant="h5" style={{ marginTop: '25px', textAlign: 'center' ,color:'#4682B4'}}>
             <b>USERS</b>
           </Typography>
           {loading && <Loader open={loading} />}

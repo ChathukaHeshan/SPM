@@ -38,14 +38,6 @@ import {
       height: theme.spacing(7),
       marginRight: theme.spacing(2),
     },
-  
-    itemNameText: {
-      textDecoration: 'none',
-      [theme.breakpoints.down('xs')]: {
-        fontSize: 'small',
-      },
-    },
-  
     deleteItemIcon: {
       color: 'red',
     },

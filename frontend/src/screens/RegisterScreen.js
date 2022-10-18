@@ -70,8 +70,8 @@ const RegisterScreen = ({ location, history }) => {
           if (values.password !== values.confirmPassword) {
             errors.password = 'Password do not match';
           }
-          if (values.password.length < 6) {
-            errors.password = 'Min length is 6 characters';
+          if (values.password.length < 5) {
+            errors.password = 'Min length is 5 characters';
           }
 
           return errors;
